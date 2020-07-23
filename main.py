@@ -10,7 +10,6 @@ from selenium.webdriver.chrome.options import Options
 phone_number=
 PATH =
 
-
 def getStock(store,url):
     options = Options()
     options.headless = True
@@ -24,7 +23,7 @@ def getStock(store,url):
             button_click = driver.find_element_by_xpath("/html/body/div[2]/div[3]/div[1]/div/div[2]/div[2]/div[4]/div[5]/div[3]/div/div/div[2]/div/span").click()
             search2 = driver.find_element_by_xpath("/html/body/div[2]/div[3]/div[1]/div/div[2]/div[2]/div[4]/div[7]/div[2]/div[1]/label/div/div[5]/span[2]")
             if (search.text == "OUT OF STOCK" and search2.text == "OUT OF STOCK"):
-                return True
+                return False
         if(store == "Target"):
             search=driver.find_element_by_xpath("/html/body/div[1]/div/div[5]/div/div[2]/div[3]/div[1]/div/div[3]")
             if(search.text=="This item isn't eligible for shipping."):
